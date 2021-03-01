@@ -1,0 +1,322 @@
+
+svg {
+  opacity: 0.5;
+}
+
+svg:hover {
+  opacity: 1;
+}
+
+.App {
+  text-align: center;
+}
+
+.fade-in {
+  animation: fadeIn ease 1s;
+  -webkit-animation: fadeIn ease 1s;
+  -moz-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 1s;
+  -ms-animation: fadeIn ease 1s;
+}
+  @keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+
+.Workspace {
+  position: relative;
+  z-index: 3;
+}
+.workspace-container {
+  position: absolute;
+  top: 10vh;
+  width: 98vw;
+  height: 90vh;
+}
+.workspace-placeholder {
+  width: 100vw;
+  padding: 0;
+  
+  position: relative;
+    z-index: 1;
+    width: 100vw;
+  top: 0;
+}
+
+.Notes  {
+  /*
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: auto;
+  align-content: start
+  */
+  width: 90vw;
+  columns: 26vw;
+  -webkit-columns: 26vw;
+  -moz-columns: 26vw;
+}
+
+.rendered .note:not(:last-child), .rendered .checkbox:not(:nth-last-child(2)) {
+  animation: none !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  -ms-animation: none !important;
+  
+}
+.note {
+  margin: 1em;
+  position: relative;
+  flex: 1 auto;
+  display: inline-block;
+  background-color: #e5f3ff;
+}
+
+.Notes textarea {
+  display: initial;
+  padding: 1vw;
+  font: inherit;
+  height: 20vh;
+  width: 20vw;
+  border: none;
+  background: none;
+  outline: none;
+  resize: none;
+}
+.delete-note{
+  position: absolute;
+  right: 0;
+  width: 0;
+height: 0;
+  border-style: solid;
+border-width: 0 4vw 4vw 0;
+opacity: 0.5;
+border-color: transparent #92d1ff transparent transparent;
+}
+.delete-note:hover {
+  opacity: 1;
+}
+.delete-note:hover > a {
+  opacity: 1;
+}
+
+.delete-note a {
+  opacity: 0;
+  position: absolute;
+    text-align: center;
+    width: 6vw;
+    line-height: 3vh;
+}
+
+.checklist-container {
+  background:#eaf6ff;
+  
+}
+.checklist {
+  border: none;
+  background-color: none;
+  outline: none;
+  margin: 0;
+  top: 0;
+}
+.checklist-control svg{
+  transform: rotate(0);
+}
+ .clicked svg {
+  transform: rotate(180deg);
+}
+.checklist input[type=text] {
+  outline: none;
+    border: none;
+    background: none;
+}
+.checkbox {
+  text-align: left;
+  margin-bottom: 0.5vh
+}
+.checkbox:hover > a {
+  opacity: 1;
+}
+.checkbox a {
+  position: relative;
+  opacity: 0;
+  float: right;
+}
+.checkbox input[type="text"] {
+  width: 84%;
+}
+.workspace-control-container a {
+  font-size: 2.5em;
+    position: absolute;
+    right: 2vw;
+    background: aliceblue;
+    line-height: 30px;
+    padding: 0.85rem;
+}
+
+
+.dash-container {
+  position: absolute;
+    top: 0;
+    width: 96vw;
+    background: blanchedalmond;
+    padding: 1vh 2vw;
+}
+.dash-container .button {
+  position: relative;
+    margin-right: 0;
+    height: fit-content;
+    font-size: 1rem;
+    width: fit-content;
+    padding: 0.25rem;
+}
+.userarea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+}
+.userarea-container {
+  position: relative;
+  z-index: 2;
+}
+.userarea-input-container {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+
+}
+
+.userarea-field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color:#282c34;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.userarea-field::placeholder {
+  color: transparent;
+}
+.userarea-field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.userarea-label {
+
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.userarea-field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.userarea-field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+/* reset input */
+.userarea-field:required, .form__field:invalid {
+  box-shadow: none;
+}
+.dialog-container {
+  width: 100vw;
+  height: 100vh;
+  background: aliceblue;
+  position: absolute;
+  z-index: 2;
+}
+.dialog-form-container {
+  position: relative;
+  width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+.dialog-form-container form {
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  right: 1vw;
+  top: 1vh;
+  
+}
+
+.guest-container {
+  
+  height: 70vh;
+  width: 100vw;
+  padding: 0;
+  
+  position: absolute;
+  bottom: 0;
+}
+.guest-buttons {
+  display: inline-flex;
+  width: 60vw;
+}
+.button {
+  
+  position: relative;
+  margin: auto;
+  background: #38ef7d;
+  width: 25vw;
+  height: 5vh;
+  border-radius: 10px;
+}
+.button a {
+  line-height: 1.5em;
+  vertical-align: middle;
+  color: rgb(252, 252, 252);
+  
+
+  font-weight: 500;
+}
+.form-button {
+  top: 1em;
+}
